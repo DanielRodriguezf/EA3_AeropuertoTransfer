@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <br>
 <main class="container" id="info">
-    <br><h1 style="text-align: center; font-size: 45px;"><strong>Boleta de Reserva</strong></h1><br>
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
+    <h1 class="text-center" style="font-size: 45px;"><strong>Ticket de Reserva</strong></h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
             <div class="card mb-4 shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title" style="font-size: 30px;"><strong>Detalles de la Reserva</strong></h5>
@@ -19,9 +20,12 @@
                         <strong>Capacidad:</strong> {{ reserva.vehiculo.capacidad }}<br>
                         <strong>Empresa:</strong> {{ reserva.vehiculo.Empresa }}<br>
                         <strong>Chofer:</strong> {{ reserva.vehiculo.Chofer }}<br>
-                        <strong>Total a pagar:</strong><strong>$20,000</strong><br>
+                        <strong>Teléfono Chofer:</strong> +{{ reserva.vehiculo.Chofer.telefono }}<br>
+                        <strong>Total a pagar:</strong> <strong>$20,000</strong><br>
+                        <img src="{% static 'img/QR_IMAGEN.png' %}" alt="QR Code" class="img-fluid mt-3" style="width: 150px;">
                     </p>
                     <a href="{% url 'catalogo' %}" class="btn btn-primary">Volver al Catálogo</a>
+                    <a href="#" class="btn btn-primary">Imprimir ticket</a>
                 </div>
             </div>
         </div>

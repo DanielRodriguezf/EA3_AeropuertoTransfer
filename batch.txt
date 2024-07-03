@@ -4,3 +4,6 @@ py -m pip install Pillow
 py -m pip install crispy
 py -m pip install bootstrap4
 py -m pip install crispy-bootstrap4
+
+user: admin
+password: admin123
