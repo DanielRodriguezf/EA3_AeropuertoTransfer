@@ -1,0 +1,47 @@
+.menu{
+    background-color: rgba(88, 88, 88, 0.712);
+    border: 3px solid rgb(255, 255, 255);
+}
+    
+body{
+    background-image: url("../img/fondo.png"); 
+}
+
+.nav-item {
+    background-color: rgba(139, 139, 139, 0.87);
+    font-family: 'Gill Sans MT';
+    font-size: 24px;
+    margin-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 2px solid rgb(255, 255, 255); 
+    border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+#letramenu{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.nav-item #letramenu:hover{
+    color: rgba(65, 65, 65, 0.87);
+}
+
+
+#info{
+    background-color: rgba(88, 88, 88, 0.712);
+    color: beige;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border: 2px solid rgb(255, 255, 255);
+}
+

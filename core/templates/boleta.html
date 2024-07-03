@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<main class="container" id="info">
+    <br><h1 style="text-align: center; font-size: 45px;"><strong>Boleta de Reserva</strong></h1><br>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 30px;"><strong>Detalles de la Reserva</strong></h5>
+                    <p class="card-text">
+                        <strong>Nombre:</strong> {{ reserva.nombre }}<br>
+                        <strong>RUT:</strong> {{ reserva.rut }}<br>
+                        <strong>Teléfono:</strong> {{ reserva.telefono }}<br>
+                        <strong>Dirección:</strong> {{ reserva.direccion }}<br>
+                        <strong>Fecha de Reserva:</strong> {{ reserva.fecha_reserva }}<br>
+                        <strong>Vehículo:</strong> {{ reserva.vehiculo.marca }} ({{ reserva.vehiculo.patenteVehiculo }})<br>
+                        <strong>Capacidad:</strong> {{ reserva.vehiculo.capacidad }}<br>
+                        <strong>Empresa:</strong> {{ reserva.vehiculo.Empresa }}<br>
+                        <strong>Chofer:</strong> {{ reserva.vehiculo.Chofer }}<br>
+                        <strong>Total a pagar:</strong><strong>$20,000</strong><br>
+                    </p>
+                    <a href="{% url 'catalogo' %}" class="btn btn-primary">Volver al Catálogo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<br>
+{% endblock %}

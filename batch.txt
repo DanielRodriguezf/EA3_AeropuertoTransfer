@@ -1,0 +1,6 @@
+py manage.py runserver
+py -m pip install setuptools
+py -m pip install Pillow
+py -m pip install crispy
+py -m pip install bootstrap4
+py -m pip install crispy-bootstrap4

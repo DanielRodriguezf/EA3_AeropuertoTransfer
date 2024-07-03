@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<main class="container" id="info">
+    <br><h1 style="text-align: center; font-size: 45px;"><strong>Vehiculos Transfer</strong></h1><br>
+    <div class="row">
+        {% for autos in vehiculos %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="{{ autos.imagen.url }}" alt="Imagen de {{ autos.marca }}" style="height: 325px; width: 350px; display: block;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 30px;"><strong>{{ autos.marca }}</strong></h5>
+                    <p class="card-text">
+                        <strong>Patente:</strong> {{ autos.patenteVehiculo }}<br>
+                        <strong>Capacidad:</strong> {{ autos.capacidad }}<br>
+                        <strong>Empresa:</strong> {{ autos.Empresa }}<br>
+                        <strong>Chofer:</strong> {{ autos.Chofer }}<br>
+                        <strong>Teléfono Chofer:</strong> +{{ autos.Chofer.telefono }}<br>
+                        <strong>Estado:</strong> 
+                        {% if autos.reservado %}
+                            Reservado
+                        {% else %}
+                            Disponible
+                        {% endif %}
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            {% if user.is_superuser %}
+                                <a href="{% url 'modificar' autos.patenteVehiculo %}" class="btn btn-warning">Modificar</a>
+                                <a href="{% url 'eliminar' autos.patenteVehiculo %}" class="btn btn-danger">Borrar</a>
+                            {% else %}
+                                {% if not autos.reservado %}
+                                    <a href="{% url 'reservar' autos.patenteVehiculo %}" class="btn btn-primary">Reservar</a>
+                                {% endif %}
+                                {% if autos.reservado %}
+                                    <a href="{% url 'cambiar_estado' autos.patenteVehiculo %}?action=cancel" class="btn btn-secondary">Cancelar Reserva</a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% if user.is_superuser %}
+    <div class="text-center">
+        <a href="{% url 'crear' %}" class="btn btn-primary">Añadir Vehiculo</a>
+    </div><br>
+    {% endif %}
+</main>
+<br>
+{% endblock %}

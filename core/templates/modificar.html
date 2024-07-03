@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<br>
+<main class="container" id="info" style="font-weight: bold;">
+    <h1 style="font-weight: bold; text-align: center;">Modificando Vehiculo</h1>
+    <form action="#" method="POST" enctype="multipart/form-data" id="forModificar">
+        {% csrf_token %}
+
+        <div class="form-group">
+            {{ vehiculoform.patenteVehiculo.label }}
+            {{ vehiculoform.patenteVehiculo }}
+        </div>
+
+        <div class="form-group">
+            {{ vehiculoform.marca.label }}
+            {{ vehiculoform.marca }}
+        </div>
+        
+        <div class="form-group">
+            {{ vehiculoform.capacidad.label }}
+            {{ vehiculoform.capacidad }}
+        </div>
+
+        <div class="form-group">
+            {{ vehiculoform.Chofer.label }}
+            {{ vehiculoform.Chofer }}
+        </div>
+
+        <div class="form-group">
+            {{ vehiculoform.Empresa.label }}
+            {{ vehiculoform.Empresa }}
+        </div>
+        <br>
+        {% if vehiculoform.imagen.value %}
+            <img src="{{ vehiculoform.imagen.value.url }}" style="width: 200px; height: 200px;">
+        {% else %}
+            <h5 style="color:red">Producto sin foto</h5>
+        {% endif %}
+
+        <div class="form-group">
+            {{ vehiculoform.imagen.label }}
+            {{ vehiculoform.imagen }}
+        </div><br>
+
+        <a href="{% url 'catalogo' %}" class="btn btn-info">Ir a Catalogo</a>
+        <input type="submit" value="Modificar" class="btn btn-warning">
+    </form>
+    <br>
+</main>
+<br>
+
+
+{% endblock %}

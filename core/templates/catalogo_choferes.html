@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<br>
+<body>
+    <main class="container" id="info">
+        <br><h1 style="text-align: center; font-size: 45px;"><strong>Choferes</strong></h1><br>
+        <div class="row">
+            {% for chofer in choferes %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size: 30px;"><strong>{{ chofer.nombreChofer }} {{ chofer.apellidoChofer }}</strong></h5>
+                        <p class="card-text">
+                            <strong>RUT:</strong> {{ chofer.rutChofer }}<br>
+                            <strong>Teléfono:</strong> {{ chofer.telefono }}
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'eliminar_chofer' chofer.rutChofer %}" class="btn btn-danger">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <a href="{% url 'crear_chofer' %}" class="btn btn-primary">Añadir Chofer</a>
+        </div><br>
+    </main>
+    <br>
+</body>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<main class="container" id="info">
+    <br><h1 style="text-align: center; font-size: 45px;"><strong>Reservar Vehículo</strong></h1><br>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 30px;"><strong>{{ vehiculo.marca }}</strong></h5>
+                    <p class="card-text">
+                        <strong>Patente:</strong> {{ vehiculo.patenteVehiculo }}<br>
+                        <strong>Capacidad:</strong> {{ vehiculo.capacidad }}<br>
+                        <strong>Empresa:</strong> {{ vehiculo.Empresa }}<br>
+                        <strong>Chofer:</strong> {{ vehiculo.Chofer }}<br>
+                        <strong>Total a Pagar: $20,000</strong>
+                    </p>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Confirmar Reserva</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<br>
+{% endblock %}

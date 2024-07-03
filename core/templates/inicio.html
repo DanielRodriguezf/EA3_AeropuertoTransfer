@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<br>
+<div id="info" class="container">
+    <br>
+    <h1 style="text-align: center; font-weight: bold; font-size: 40px;">Bienvenidos al Aeropuerto Civil de Ciudad Hermosa</h1>
+    <br>
+</div>
+<br>
+    <div id="info" class="container" style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px; padding: 10px;">
+        <h2 style="font-weight: bold;">Un Aeropuerto Moderno y Eficiente</h2>
+        <p><li><strong>Ciudad Hermosa</strong> se enorgullece de tener un aeropuerto que maneja un gran flujo de pasajeros, alcanzando hasta 300 arribos por hora. Ofrecemos servicios excepcionales para asegurar que su experiencia sea cómoda y conveniente.</li></p><br>
+        <h2 style="font-weight: bold;">Servicio de Transfer Seguro y de Calidad</h2>
+        <p><li>Sabemos que un 30% de nuestros pasajeros necesitan transporte a su destino final. Por ello, hemos desarrollado una <strong>Aplicación de Reserva de Transfer</strong> que garantiza un transporte seguro y disponible en el aeropuerto.</li></p>
+    </div>
+    <div style="flex: 1; min-width: 300px; padding: 10px; padding-top: 60px;">
+        <img src="{% static 'img/aeropuerto.jpg' %}" width="100%" alt="Aeropuerto Ciudad Hermosa">
+    </div>
+</div>
+    <br>
+    <div class="container" id="info">   
+        <h2 style="font-weight: bold;">Cómo Funciona</h2>
+        <ul style="text-align: left; display: inline-block;">
+            <li><strong>Reserva Fácil</strong>: Al llegar, use nuestros tótems de información para reservar un transfer.</li>
+            <li><strong>Pago Seguro</strong>: Pague la tarifa de reserva de $1,000 pesos por pasajero con tarjeta de crédito.</li>
+            <li><strong>Ticket con QR</strong>: Reciba un ticket impreso con un código QR, número de transfer y ubicación de estacionamiento.</li>
+            <li><strong>Información Detallada</strong>: Escanee el QR para obtener información detallada y un mapa en su móvil.</li>
+        </ul>
+        <h2 style="font-weight: bold;">Ventajas del Sistema</h2>
+        <ul style="text-align: left; display: inline-block;">
+            <li><strong>Evita Disputas</strong>: Garantice su transporte antes de llegar al estacionamiento.</li>
+            <li><strong>Acceso Rápido</strong>: Mueva al transfer que lo está esperando sin demoras.</li>
+            <li><strong>Gestión Eficiente</strong>: Los choferes pueden ver en tiempo real los pasajeros asignados a sus transfers.</li>
+        </ul>
+</div>
+<br>
+
+{% endblock %}

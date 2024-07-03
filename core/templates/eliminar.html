@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<main class="container">
+    <div>
+        <br>
+        <div class="card" id="info">
+            <h2 class="text-center fw-bold">Eliminando vehiculo: {{ vehiculo.patenteVehiculo }}</h2>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{{ vehiculo.imagen.url }}" style="width: 280px; height: 280px;" class="card-img-top">
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="card-title"><strong>Tipo Vehiculo: {{ vehiculo.marca }}</strong></h5>
+                        <p class="card-text"><strong>Marca:</strong> {{ vehiculo.marca }}</p>
+                        <p class="card-text"><strong>Capacidad:</strong> {{ vehiculo.capacidad }}</p>
+                        <p class="card-text"><strong>Chofer:</strong> {{ vehiculo.Chofer }}</p>
+                        <p class="card-text"><strong>Empresa:</strong> {{ vehiculo.Empresa }}</p>
+                        <form action="#" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <a href="{% url 'catalogo' %}" class="btn btn-primary" id="boton_normal">Volver</a>
+                            <a href="{% url 'modificar' vehiculo.patenteVehiculo %}" class="btn btn-warning" id="boton_normal">Modificar</a>
+                            <input type="hidden" name="eliminar" value="true">
+                            <input type="submit" value="Confirmar Eliminación" class="btn btn-danger" id="boton_normal">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

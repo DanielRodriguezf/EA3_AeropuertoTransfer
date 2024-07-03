@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<br>
+<div id="info" class="container">
+    <h1 style="font-weight: bold; text-align: center;">Opciones Administrativas</h1><br>
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Administrar Empresas</h5>
+                    <p class="card-text">Administre las empresas registradas en el sistema.</p>
+                    <a href="{% url 'catalogo_empresas' %}" class="btn btn-success">Ver Empresas</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Administrar Choferes</h5>
+                    <p class="card-text">Administre los choferes registrados en el sistema.</p>
+                    <a href="{% url 'catalogo_choferes' %}" class="btn btn-success">Ver Choferes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock %}
